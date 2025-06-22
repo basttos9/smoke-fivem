@@ -32,15 +32,13 @@ end)
 function evento(coordx, coordy, coordz, obj)
     Citizen.CreateThread(function()
         local ped = PlayerPedId()
-        SetEntityProofs(ped, true, true, true, true, true, true, true, true)
         RequestNamedPtfxAsset("core")
         while not HasNamedPtfxAssetLoaded("core") do
             Citizen.Wait(10)
         end
         UseParticleFxAssetNextCall("core")
-        local fxHandle = StartParticleFxLoopedAtCoord("exp_grd_grenade_smoke", coordx, coordy, coordz + 0.3, 0.0, 0.0, 0.0, 6.0, false, false, false, false)
+        local fxHandle = StartParticleFxLoopedAtCoord("proj_grenade_smoke", coordx, coordy, coordz + 0.3, 0.0, 0.0, 0.0, 6.0, false, false, false, false)
         Citizen.Wait(47000)
         StopParticleFxLooped(fxHandle, false)
-        SetEntityProofs(ped, false, false, false, false, false, false, false, false)
     end)
 end
