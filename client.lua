@@ -37,7 +37,7 @@ function evento(coordx, coordy, coordz, obj)
             Citizen.Wait(10)
         end
         UseParticleFxAssetNextCall("core")
-        local fxHandle = StartParticleFxLoopedAtCoord("proj_grenade_smoke", coordx, coordy, coordz + 0.3, 0.0, 0.0, 0.0, 6.0, false, false, false, false)
+        local fxHandle = StartParticleFxLoopedAtCoord("exp_grd_grenade_smoke", coordx, coordy, coordz + 0.3, 0.0, 0.0, 0.0, 6.0, false, false, false, false)
         Citizen.Wait(47000)
         StopParticleFxLooped(fxHandle, false)
     end)
